@@ -1,11 +1,6 @@
 # ────────────────────────────────────────────────
 #          macOS / Xcode
 # ────────────────────────────────────────────────
-*.xcworkspace/
-*.xcodeproj/
-!*.xcodeproj/project.pbxproj   # ← usually keep this one
-!*.xcodeproj/xcshareddata/
-
 build/
 DerivedData/
 DerivedDataCache/
