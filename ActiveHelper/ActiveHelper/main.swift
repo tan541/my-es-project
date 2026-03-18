@@ -1,7 +1,7 @@
 import Foundation
 import SystemExtensions
 
-let extensionIdentifier = "com.example.myproject.activehelpercli.endpointsecurity"
+let extensionIdentifier = "com.example.myproject.activehelper.EndpointSecurityExtension"
 
 final class Activator: NSObject, OSSystemExtensionRequestDelegate {
     
