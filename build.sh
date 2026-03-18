@@ -14,7 +14,7 @@ xcodebuild -scheme ActiveHelper \
 
 echo ""
 echo "CLI binary ready at:"
-echo "  $(pwd)/build/Debug/ActiveHelperCLI"
+echo "  $(pwd)/build/Debug/ActiveHelper"
 echo "→ Copy/symlink or bundle it with Electron later"
 echo ""
 
