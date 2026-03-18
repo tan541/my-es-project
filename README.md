@@ -1,6 +1,6 @@
 # Electron App + System Extension
 
-# Project layout
+## Project layout
 
 ```
 my-es-project/
@@ -16,7 +16,7 @@ my-es-project/
 └── build.sh                    # build script (no signing)
 ```
 
-# Architecture
+## Architecture
 
 ```mermaid
 graph TD
@@ -39,4 +39,22 @@ graph TD
         ESE -. "NSXPCConnection" .-> NH
         NH -. "Stdout / IPC" .-> MP
     end
+```
+
+## Setup and build
+
+```
+# install dependencies
+$ cd electron-ui && npm i
+
+# build whole solution
+$ ./build.sh
+```
+
+## Testing
+
+Navigate to build folder, usually at: `~/Library/Developer/Xcode/DerivedData/ActiveHelper-ehmlgvcypispkpdgnpfiycczrrgg/Build/Products/Debug`
+
+```sh
+$ ./ActiveHelper
 ```
