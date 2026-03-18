@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		198ECC0D2F6A5F260024AFB6 /* libEndpointSecurity.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 198ECC0C2F6A5F260024AFB6 /* libEndpointSecurity.tbd */; };
-		198ECC182F6A5F600024AFB6 /* com.example.myproject.activehelper.EndpointSecurityExtension.systemextension in CopyFiles */ = {isa = PBXBuildFile; fileRef = 198ECC0A2F6A5F260024AFB6 /* com.example.myproject.activehelper.EndpointSecurityExtension.systemextension */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		198ECC182F6A5F600024AFB6 /* com.example.myproject.EndpointSecurityExtension.systemextension in CopyFiles */ = {isa = PBXBuildFile; fileRef = 198ECC0A2F6A5F260024AFB6 /* com.example.myproject.EndpointSecurityExtension.systemextension */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,7 +27,7 @@
 			dstPath = "$(SYSTEM_EXTENSIONS_FOLDER_PATH)";
 			dstSubfolderSpec = 16;
 			files = (
-				198ECC182F6A5F600024AFB6 /* com.example.myproject.activehelper.EndpointSecurityExtension.systemextension in CopyFiles */,
+				198ECC182F6A5F600024AFB6 /* com.example.myproject.EndpointSecurityExtension.systemextension in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,7 +35,7 @@
 
 /* Begin PBXFileReference section */
 		198ECBFC2F6A5ECA0024AFB6 /* ActiveHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ActiveHelper; sourceTree = BUILT_PRODUCTS_DIR; };
-		198ECC0A2F6A5F260024AFB6 /* com.example.myproject.activehelper.EndpointSecurityExtension.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = com.example.myproject.activehelper.EndpointSecurityExtension.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
+		198ECC0A2F6A5F260024AFB6 /* com.example.myproject.EndpointSecurityExtension.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = com.example.myproject.EndpointSecurityExtension.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
 		198ECC0C2F6A5F260024AFB6 /* libEndpointSecurity.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libEndpointSecurity.tbd; path = usr/lib/libEndpointSecurity.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				198ECBFC2F6A5ECA0024AFB6 /* ActiveHelper */,
-				198ECC0A2F6A5F260024AFB6 /* com.example.myproject.activehelper.EndpointSecurityExtension.systemextension */,
+				198ECC0A2F6A5F260024AFB6 /* com.example.myproject.EndpointSecurityExtension.systemextension */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,7 +156,7 @@
 			packageProductDependencies = (
 			);
 			productName = EndpointSecurityExtension;
-			productReference = 198ECC0A2F6A5F260024AFB6 /* com.example.myproject.activehelper.EndpointSecurityExtension.systemextension */;
+			productReference = 198ECC0A2F6A5F260024AFB6 /* com.example.myproject.EndpointSecurityExtension.systemextension */;
 			productType = "com.apple.product-type.system-extension";
 		};
 /* End PBXNativeTarget section */
@@ -349,7 +349,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ActiveHelper/ActiveHelper.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.myproject.ActiveHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -359,7 +362,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ActiveHelper/ActiveHelper.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.myproject.ActiveHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -375,15 +381,16 @@
 				INFOPLIST_FILE = EndpointSecurityExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = EndpointSecurityExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSSystemExtensionUsageDescription = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.myproject.activehelper.EndpointSecurityExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.myproject.EndpointSecurityExtension;
 				PRODUCT_NAME = "$(inherited)";
-				REGISTER_APP_GROUPS = YES;
+				REGISTER_APP_GROUPS = NO;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -400,15 +407,16 @@
 				INFOPLIST_FILE = EndpointSecurityExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = EndpointSecurityExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSSystemExtensionUsageDescription = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.myproject.activehelper.EndpointSecurityExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.myproject.EndpointSecurityExtension;
 				PRODUCT_NAME = "$(inherited)";
-				REGISTER_APP_GROUPS = YES;
+				REGISTER_APP_GROUPS = NO;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

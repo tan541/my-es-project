@@ -22,8 +22,8 @@ ipcMain.on("activate-extension", () => {
   // IMPORTANT: Replace with REAL path after first build
   // Or better: use electron-builder extraResources to bundle it
   const helperPath = path.join(
-    __dirname,
-    "../../active-helper-cli/build/Debug/ActiveHelperCLI",
+    "",
+    "/Users/tannguyen/Library/Developer/Xcode/DerivedData/ActiveHelper-fawbwgxtqsgqhvfqrfzyqawkaeju/Build/Products/Debug/ActiveHelper",
   );
   // Example: "/Users/yourname/my-es-project/active-helper-cli/build/Debug/ActiveHelperCLI"
 
