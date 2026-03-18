@@ -27,7 +27,7 @@ final class Activator: NSObject, OSSystemExtensionRequestDelegate {
         case .completed:
             finalStatus = "✅ Activation completed successfully"
         case .willCompleteAfterReboot:
-            <#code#>
+            finalStatus = "✅ Activation completed successfully after reboot"
         @unknown default:
             finalStatus = "Finished with unknown result: \(result)"
         }
