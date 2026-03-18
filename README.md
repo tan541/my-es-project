@@ -9,9 +9,9 @@ my-es-project/
 │   ├── main.js
 │   ├── index.html
 │   └── ...
-├── active-helper-cli/          # Xcode project folder (Command Line Tool + System Extension target)
-│   ├── ActiveHelperCLI.xcodeproj
-│   ├── ActiveHelperCLI/        # main.swift + files
+├── ActiveHelper/          # Xcode project folder (Command Line Tool + System Extension target)
+│   ├── ActiveHelper.xcodeproj 
+│   ├── ActiveHelper/        # CLI: main.swift + files
 │   └── EndpointSecurityExtension/   # extension code
 └── build.sh                    # build script (no signing)
 ```

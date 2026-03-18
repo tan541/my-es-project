@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Endpoint Security UI</title>
+        <style>
+            body {
+                font-family: system-ui;
+                padding: 40px;
+            }
+            pre {
+                background: #f0f0f0;
+                padding: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Endpoint Security Control</h1>
+        <p>
+            Click to request activation of the Endpoint Security Extension via
+            CLI helper.
+        </p>
+        <button id="btn" style="padding: 12px 24px; font-size: 16px">
+            Activate Extension
+        </button>
+
+        <h3>Helper Output:</h3>
+        <pre id="output">Waiting for action...</pre>
+
+        <script>
+            const { ipcRenderer } = require("electron");
+            const output = document.getElementById("output");
+
+            document.getElementById("btn").addEventListener("click", () => {
+                output.textContent = "Launching helper...\n";
+                ipcRenderer.send("activate-extension");
+            });
+
+            ipcRenderer.on("helper-output", (event, msg) => {
+                output.textContent += msg + "\n";
+            });
+
+            ipcRenderer.on("helper-finished", (event, code) => {
+                output.textContent += `\nHelper finished (exit code ${code})\n`;
+            });
+        </script>
+    </body>
+</html>
