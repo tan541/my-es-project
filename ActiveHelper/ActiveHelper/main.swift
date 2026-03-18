@@ -4,25 +4,31 @@ import SystemExtensions
 let extensionIdentifier = "com.example.myproject.activehelper.EndpointSecurityExtension"
 
 final class Activator: NSObject, OSSystemExtensionRequestDelegate {
-    
+
     let semaphore = DispatchSemaphore(value: 0)
     var finalStatus = "Unknown"
-    
-    func request(_ request: OSSystemExtensionRequest,
-                 actionForReplacingExtension existing: OSSystemExtensionProperties,
-                 withExtension new: OSSystemExtensionProperties) -> OSSystemExtensionRequest.ReplacementAction {
+
+    func request(
+        _ request: OSSystemExtensionRequest,
+        actionForReplacingExtension existing: OSSystemExtensionProperties,
+        withExtension new: OSSystemExtensionProperties
+    ) -> OSSystemExtensionRequest.ReplacementAction {
         print("Replacing older version \(existing.bundleShortVersion) → \(new.bundleShortVersion)")
         return .replace
     }
-    
+
     func requestNeedsUserApproval(_ request: OSSystemExtensionRequest) {
-        finalStatus = "Activation requires manual approval:\n" +
-                      "→ System Settings → Privacy & Security → Allow the extension"
+        finalStatus =
+            "Activation requires manual approval:\n"
+            + "→ System Settings → Privacy & Security → Allow the extension"
         print(finalStatus)
         semaphore.signal()
     }
-    
-    func request(_ request: OSSystemExtensionRequest, didFinishWithResult result: OSSystemExtensionRequest.Result) {
+
+    func request(
+        _ request: OSSystemExtensionRequest,
+        didFinishWithResult result: OSSystemExtensionRequest.Result
+    ) {
         switch result {
         case .completed:
             finalStatus = "✅ Activation completed successfully"
@@ -34,11 +40,11 @@ final class Activator: NSObject, OSSystemExtensionRequestDelegate {
         print(finalStatus)
         semaphore.signal()
     }
-    
+
     func request(_ request: OSSystemExtensionRequest, didFailWithError error: Error) {
         let nsError = error as NSError
         let code = nsError.code
-        
+
         switch code {
         case OSSystemExtensionError.missingEntitlement.rawValue:
             finalStatus = "Missing entitlement (check signing & entitlements)"
@@ -51,7 +57,7 @@ final class Activator: NSObject, OSSystemExtensionRequestDelegate {
         default:
             finalStatus = "Activation failed: \(error.localizedDescription) (code \(code))"
         }
-        
+
         print(finalStatus)
         semaphore.signal()
     }
@@ -68,6 +74,8 @@ let request = OSSystemExtensionRequest.activationRequest(
 
 request.delegate = delegate
 OSSystemExtensionManager.shared.submitRequest(request)
+
+print("ActiveHelperCLI – Before semaphore")
 
 _ = delegate.semaphore.wait(timeout: .distantFuture)
 
