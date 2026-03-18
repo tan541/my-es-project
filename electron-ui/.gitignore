@@ -1,0 +1,45 @@
+# ────────────────────────────────────────────────
+#          Electron / Node.js / JavaScript
+# ────────────────────────────────────────────────
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+.pnpm-debug.log
+package-lock.json    # ← keep only if you want to lock versions
+# yarn.lock          # ← uncomment if you're using Yarn instead
+
+# Build output
+dist/
+out/
+build/
+release/
+*.app
+*.exe
+*.dmg
+*.deb
+*.rpm
+*.msi
+*.pkg
+*.7z
+*.zip
+*.tar.gz
+
+# Electron builder / forge / packager artifacts
+electron-builder.yaml
+electron-builder.env
+.builder/
+forge.config.*
+
+# Logs & temp
+logs/
+*.log
+.DS_Store
+Thumbs.db
+
+# Dev / editor
+.vscode/
+.idea/
+*.sublime-*
+*.swp
+*.swo

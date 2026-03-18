@@ -1,0 +1,37 @@
+# ────────────────────────────────────────────────
+#          macOS / Xcode
+# ────────────────────────────────────────────────
+*.xcworkspace/
+*.xcodeproj/
+!*.xcodeproj/project.pbxproj   # ← usually keep this one
+!*.xcodeproj/xcshareddata/
+
+build/
+DerivedData/
+DerivedDataCache/
+*.moved-aside
+*.xcuserstate
+*.xcuserdatad
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+
+# Xcode playgrounds & previews
+*.playground/
+Timeline.xctimeline
+Preview Assets.xcassets/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# macOS junk
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
