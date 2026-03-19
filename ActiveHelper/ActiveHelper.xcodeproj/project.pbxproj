@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		198ECC0D2F6A5F260024AFB6 /* libEndpointSecurity.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 198ECC0C2F6A5F260024AFB6 /* libEndpointSecurity.tbd */; };
-		198ECC182F6A5F600024AFB6 /* com.uney.shieldnetdefense.Extension.systemextension in CopyFiles */ = {isa = PBXBuildFile; fileRef = 198ECC0A2F6A5F260024AFB6 /* com.uney.shieldnetdefense.Extension.systemextension */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		198ECC182F6A5F600024AFB6 /* com.qualgo.aisoc.endpointsecurity.sample.Extension.systemextension in CopyFiles */ = {isa = PBXBuildFile; fileRef = 198ECC0A2F6A5F260024AFB6 /* com.qualgo.aisoc.endpointsecurity.sample.Extension.systemextension */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,7 +27,7 @@
 			dstPath = "$(SYSTEM_EXTENSIONS_FOLDER_PATH)";
 			dstSubfolderSpec = 16;
 			files = (
-				198ECC182F6A5F600024AFB6 /* com.uney.shieldnetdefense.Extension.systemextension in CopyFiles */,
+				198ECC182F6A5F600024AFB6 /* com.qualgo.aisoc.endpointsecurity.sample.Extension.systemextension in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,7 +35,7 @@
 
 /* Begin PBXFileReference section */
 		198ECBFC2F6A5ECA0024AFB6 /* ActiveHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ActiveHelper; sourceTree = BUILT_PRODUCTS_DIR; };
-		198ECC0A2F6A5F260024AFB6 /* com.uney.shieldnetdefense.Extension.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = com.uney.shieldnetdefense.Extension.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
+		198ECC0A2F6A5F260024AFB6 /* com.qualgo.aisoc.endpointsecurity.sample.Extension.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = com.qualgo.aisoc.endpointsecurity.sample.Extension.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
 		198ECC0C2F6A5F260024AFB6 /* libEndpointSecurity.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libEndpointSecurity.tbd; path = usr/lib/libEndpointSecurity.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				198ECBFC2F6A5ECA0024AFB6 /* ActiveHelper */,
-				198ECC0A2F6A5F260024AFB6 /* com.uney.shieldnetdefense.Extension.systemextension */,
+				198ECC0A2F6A5F260024AFB6 /* com.qualgo.aisoc.endpointsecurity.sample.Extension.systemextension */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,7 +156,7 @@
 			packageProductDependencies = (
 			);
 			productName = EndpointSecurityExtension;
-			productReference = 198ECC0A2F6A5F260024AFB6 /* com.uney.shieldnetdefense.Extension.systemextension */;
+			productReference = 198ECC0A2F6A5F260024AFB6 /* com.qualgo.aisoc.endpointsecurity.sample.Extension.systemextension */;
 			productType = "com.apple.product-type.system-extension";
 		};
 /* End PBXNativeTarget section */
@@ -258,7 +258,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development: developer@qualgo.net (Q2MPFS6MZF)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -283,7 +283,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx15.5;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -322,7 +322,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development: developer@qualgo.net (Q2MPFS6MZF)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -340,7 +340,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx15.5;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
@@ -349,13 +349,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ActiveHelper/ActiveHelper.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NHV44H52VZ;
 				ENABLE_HARDENED_RUNTIME = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.uney.shieldnetdefense;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qualgo.aisoc.endpointsecurity.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -364,13 +366,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ActiveHelper/ActiveHelper.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NHV44H52VZ;
 				ENABLE_HARDENED_RUNTIME = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.uney.shieldnetdefense;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qualgo.aisoc.endpointsecurity.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -394,7 +398,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.uney.shieldnetdefense.Extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qualgo.aisoc.endpointsecurity.sample.Extension;
 				PRODUCT_NAME = "$(inherited)";
 				REGISTER_APP_GROUPS = NO;
 				SKIP_INSTALL = YES;
@@ -422,7 +426,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.uney.shieldnetdefense.Extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qualgo.aisoc.endpointsecurity.sample.Extension;
 				PRODUCT_NAME = "$(inherited)";
 				REGISTER_APP_GROUPS = NO;
 				SKIP_INSTALL = YES;
