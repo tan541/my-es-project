@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		198ECC0D2F6A5F260024AFB6 /* libEndpointSecurity.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 198ECC0C2F6A5F260024AFB6 /* libEndpointSecurity.tbd */; };
-		198ECC182F6A5F600024AFB6 /* com.example.myproject.EndpointSecurityExtension.systemextension in CopyFiles */ = {isa = PBXBuildFile; fileRef = 198ECC0A2F6A5F260024AFB6 /* com.example.myproject.EndpointSecurityExtension.systemextension */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		198ECC182F6A5F600024AFB6 /* com.uney.shieldnetdefense.Extension.systemextension in CopyFiles */ = {isa = PBXBuildFile; fileRef = 198ECC0A2F6A5F260024AFB6 /* com.uney.shieldnetdefense.Extension.systemextension */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,7 +27,7 @@
 			dstPath = "$(SYSTEM_EXTENSIONS_FOLDER_PATH)";
 			dstSubfolderSpec = 16;
 			files = (
-				198ECC182F6A5F600024AFB6 /* com.example.myproject.EndpointSecurityExtension.systemextension in CopyFiles */,
+				198ECC182F6A5F600024AFB6 /* com.uney.shieldnetdefense.Extension.systemextension in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,7 +35,7 @@
 
 /* Begin PBXFileReference section */
 		198ECBFC2F6A5ECA0024AFB6 /* ActiveHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ActiveHelper; sourceTree = BUILT_PRODUCTS_DIR; };
-		198ECC0A2F6A5F260024AFB6 /* com.example.myproject.EndpointSecurityExtension.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = com.example.myproject.EndpointSecurityExtension.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
+		198ECC0A2F6A5F260024AFB6 /* com.uney.shieldnetdefense.Extension.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = com.uney.shieldnetdefense.Extension.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
 		198ECC0C2F6A5F260024AFB6 /* libEndpointSecurity.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libEndpointSecurity.tbd; path = usr/lib/libEndpointSecurity.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				198ECBFC2F6A5ECA0024AFB6 /* ActiveHelper */,
-				198ECC0A2F6A5F260024AFB6 /* com.example.myproject.EndpointSecurityExtension.systemextension */,
+				198ECC0A2F6A5F260024AFB6 /* com.uney.shieldnetdefense.Extension.systemextension */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,7 +156,7 @@
 			packageProductDependencies = (
 			);
 			productName = EndpointSecurityExtension;
-			productReference = 198ECC0A2F6A5F260024AFB6 /* com.example.myproject.EndpointSecurityExtension.systemextension */;
+			productReference = 198ECC0A2F6A5F260024AFB6 /* com.uney.shieldnetdefense.Extension.systemextension */;
 			productType = "com.apple.product-type.system-extension";
 		};
 /* End PBXNativeTarget section */
@@ -352,7 +352,9 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.myproject.ActiveHelper;
+				DEVELOPMENT_TEAM = NHV44H52VZ;
+				ENABLE_HARDENED_RUNTIME = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.uney.shieldnetdefense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -365,7 +367,9 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.myproject.ActiveHelper;
+				DEVELOPMENT_TEAM = NHV44H52VZ;
+				ENABLE_HARDENED_RUNTIME = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.uney.shieldnetdefense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -375,8 +379,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = EndpointSecurityExtension/EndpointSecurityExtension.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NHV44H52VZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EndpointSecurityExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = EndpointSecurityExtension;
@@ -388,7 +394,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.myproject.EndpointSecurityExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.uney.shieldnetdefense.Extension;
 				PRODUCT_NAME = "$(inherited)";
 				REGISTER_APP_GROUPS = NO;
 				SKIP_INSTALL = YES;
@@ -401,8 +407,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = EndpointSecurityExtension/EndpointSecurityExtension.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NHV44H52VZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EndpointSecurityExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = EndpointSecurityExtension;
@@ -414,7 +422,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.myproject.EndpointSecurityExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.uney.shieldnetdefense.Extension;
 				PRODUCT_NAME = "$(inherited)";
 				REGISTER_APP_GROUPS = NO;
 				SKIP_INSTALL = YES;
